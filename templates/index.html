@@ -4,6 +4,12 @@
 		<script src="/static/index.js" defer></script>
 	</head>
 	<body>
-		<a href="upi://pay?pa=7828369492@ybl&amp;pn=Suryakant Agrawal&amp;cu=INR&amp;am=100" class="upi-pay1" id="pay_tag">Pay now!!</a>
+		{{amount}}
+		{% if amount %}
+
+		<a href="upi://pay?pa=7828369492@ybl&amp;pn=Suryakant Agrawal&amp;cu=INR&amp;am={{amount}}" class="upi-pay1" id="pay_tag">Pay now!!</a>
+		{% else %}
+		<a href="upi://pay?pa=7828369492@ybl&amp;pn=Suryakant Agrawal&amp;cu=INR" class="upi-pay1" id="pay_tag">Pay now!!</a>
+		{% endif %}
 	</body>
 </html>
